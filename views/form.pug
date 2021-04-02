@@ -1,0 +1,29 @@
+mixin book-form(book)
+    form(class="w3-container", id="book-form", name="book-form", method="post")
+        div(class="w3-section")
+            label
+                b Автор книги
+            input(id="form-author", name="author", class="w3-input w3-border", placeholder="Введите автора книги", value=book.author)
+            br
+            label
+                b Название книги
+            input(id="form-title", name="title", class="w3-input w3-border", placeholder="Введите название книги", value=book.title)
+            br
+            label
+                b Дата публикации
+            input(id="form-publication-date", type="date", name="publication_date", class="w3-input w3-border", placeholder="Введите дату публикации книги", value=book.publication_date)
+            br
+            label
+                b Статус
+            select(id="form-status", name="status", class="w3-input w3-border w3-select", onchange="displayFields()")
+                option(value="0", selected=book.status === "0") В наличии
+                option(value="1", selected=book.status === "1") Выдана
+            br
+            div(id="form-additional")
+                label
+                    b Читатель
+                input(id="form-reader-name", name="reader_name", class="w3-input w3-border", placeholder="Введите имя читателя", value=book.reader_name)
+                br
+                label
+                    b Ожидаемая дата возврата
+                input(id="form-return-date", type="date", name="return_date", class="w3-input w3-border", placeholder="Введите ожидаемую дата возврата", value=book.return_date)

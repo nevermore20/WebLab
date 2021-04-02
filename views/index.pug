@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    div(style="width:50%; margin-left: 25%")
+        div(class="w3-card-2" style="margin-bottom: 20px")
+            header(class="w3-container w3-pale-yellow")
+                h5 Фильтрация
+            div(class="w3-container")
+                table(width="100%")
+                    tbody
+                        tr
+                            td(width="33%", align="center") Название
+                            td(width="33%", align="center") Дата возврата
+                            td(align="center") Статус
+                        tr
+                            td(width="33%", align="center")
+                                button(class="w3-button w3-green", style="width:100%", onclick="setOrder('title','asc')") По возрастанию
+                            td(width="33%", align="center")
+                                button(class="w3-button w3-green", style="width:100%", onclick="setOrder('return_date','asc')") По возрастанию
+                            td(align="center")
+                                button(class="w3-button w3-green", style="width:100%", onclick="setOrder('status','asc')") По возрастанию
+                        tr
+                            td(width="33%", align="center")
+                                button(class="w3-button w3-red", style="width:100%", onclick="setOrder('title','desc')") По убыванию
+                            td(width="33%", align="center")
+                                button(class="w3-button w3-red", style="width:100%", onclick="setOrder('return_date','desc')") По убыванию
+                            td(align="center")
+                                button(class="w3-button w3-red", style="width:100%", onclick="setOrder('status','desc')") По убыванию
+    div(id="book_cards" style="width:50%; margin-left: 25%")
+    button(class="w3-button w3-green", id="button-create-book", onclick="createButtonClicked()", style="margin-left: 25%") Добавить книгу
+    div(class="w3-modal", id="form-modal")
+        div(class="w3-modal-content" style="width: 40%")
+            header(class="w3-container w3-pale-yellow")
+                span(onclick="document.getElementById('form-modal').style.display='none'", class="w3-button w3-display-topright") &times;
+                h2 Создание/изменение книги
+            div(id="form-modal-content")

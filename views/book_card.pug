@@ -1,0 +1,26 @@
+div(class="w3-card-2" style="margin-bottom: 20px")
+    header(class="w3-container w3-pale-yellow")
+        h4=book.title
+            small
+                if book.status === "1"
+                    span(class="w3-badge w3-right w3-margin-right w3-deep-orange" style="border-radius: 0") Нет в наличии
+                else
+                    span(class="w3-badge w3-right w3-margin-right w3-green" style="border-radius: 0") В наличии
+    div(class="w3-container")
+        table(class="w3-table w3-bordered")
+            tbody
+                tr
+                    td(width="60%") Автор
+                    td=book.author
+                tr
+                    td(width="60%") Дата публикации
+                    td=book.publication_date.split('-').reverse().join('.')
+                if book.status === "1"
+                    tr
+                        td(width="60%") Ожидаемая дата возврата
+                        td=book.return_date.split('-').reverse().join('.')
+    footer(class="w3-container w3-pale-yellow" style="padding: 5px")
+        a(href="#" onclick="deleteButtonClicked(\"" + id + "\")" style="float: right; margin-right: 10px")
+            i(class="fa fa-trash")
+        a(href="#" onclick="updateButtonClicked(\"" + id + "\")" style="float: right; margin-right: 10px")
+                i(class="fa fa-pencil")
