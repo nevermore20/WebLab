@@ -1,0 +1,39 @@
+mixin picture-form(picture)
+    form(class="w3-container", id="form", name="form", method="post", enctype="multipart/form-data")
+        div(class="w3-section")
+            label
+                b Автор
+            input(id="form-author", name="author", class="w3-input w3-border", placeholder="Введите автора картины", value=picture.author)
+            br
+            label
+                b Название картины
+            input(id="form-title", name="title", class="w3-input w3-border", placeholder="Введите название картины", value=picture.title)
+            br
+            label
+                b Описание
+            textarea(id="form-description", name="description", class="w3-input w3-border", placeholder="Введите описание картины")=picture.description
+            br
+            label
+                b Изображение
+            input(type="file", name="image_preview" class="w3-input w3-border")
+            br
+            div(class="w3-third" style="padding-right: 15px")
+                label21
+                    b Начальная цена
+                input(id="form-start-price", type="number", name="start_price", class="w3-input w3-border", placeholder="Введите начальную цену", value=picture.start_price)
+                br
+            div(class="w3-third" style="padding-right: 15px")
+                label
+                    b Минимальный шаг
+                input(id="form-min-step", type="number", name="min_step", class="w3-input w3-border", placeholder="Введите минимальный шаг", value=picture.min_step)
+                br
+            div(class="w3-third")
+                label
+                    b Максимальный шаг
+                input(id="form-max-step", type="number", name="max_step", class="w3-input w3-border", placeholder="Введите максимальный шаг", value=picture.max_step)
+                br
+            label
+                b Картина учавствует в предстоящем аукционе
+            select(id="form-status", name="status", class="w3-input w3-border w3-select", onchange="displayPictureFields()")
+                option(value="0", selected=picture.status === "0") Нет
+                option(value="1", selected=picture.status === "1") Да

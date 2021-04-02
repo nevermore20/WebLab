@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    button(class="w3-button w3-green", id="button-create-picture", onclick="createPictureButtonClicked()") Добавить картину
+    div(id="picture_cards")
+
+    div(class="w3-modal", id="form-modal")
+        div(class="w3-modal-content modal-form")
+            header(class="w3-container w3-light-grey")
+                span(onclick="document.getElementById('form-modal').style.display='none'", class="w3-button w3-display-topright") &times;
+                h2 Создание/изменение записи о картине
+            div(id="form-modal-content")

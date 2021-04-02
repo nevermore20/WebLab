@@ -1,0 +1,19 @@
+mixin participant-form(participant)
+    form(class="w3-container", id="form", name="form", method="post", enctype="multipart/form-data")
+        div(class="w3-section")
+            label
+                b Фамилия
+            input(id="form-last-name", name="last_name", class="w3-input w3-border", placeholder="Введите фамилию участника", value=participant.last_name)
+            br
+            label
+                b Фамилия
+            input(id="form-first-name", name="first_name", class="w3-input w3-border", placeholder="Введите имя участника", value=participant.first_name)
+            br
+            label
+                b Отчество
+            input(id="form-second-name", name="second_name", class="w3-input w3-border", placeholder="Введите отчество участника", value=participant.second_name)
+            br
+            label
+                b Запас денежных средств
+            input(id="form-balance", name="balance", class="w3-input w3-border", placeholder="Введите запас средств участника", value=participant.balance)
+            br

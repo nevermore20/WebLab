@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    form(class="w3-container" method="POST" action="/config")
+        br
+        div(class="w3-card")
+            div(class="w3-container w3-dark-grey")
+                h4 Дата и время начала аукциона
+            div(class="w3-container")
+                input(class="w3-input" type="datetime-local" name="datetime_begin", value=config.datetime_begin)
+        br
+        div(class="w3-card")
+            div(class="w3-container w3-dark-grey")
+                h4 Таймаут продажи
+            div(class="w3-container")
+                input(class="w3-input" type="number" name="sell_timeout", value=config.sell_timeout)
+        br
+        div(class="w3-card")
+            div(class="w3-container w3-dark-grey")
+                h4 Интервал времени отсчёта до окончания торгов по картине
+            div(class="w3-container")
+                input(class="w3-input" type="number" name="before_sell_interval", value=config.before_sell_interval)
+        br
+        div(class="w3-card")
+            div(class="w3-container w3-dark-grey")
+                h4 Время паузы для изучения информации по картине до начала торгов по картине
+            div(class="w3-container")
+                input(class="w3-input" type="number" name="pause_sell_interval", value=config.pause_sell_interval)
+        br
+        button(type="submit", class="w3-button w3-green") Обновить

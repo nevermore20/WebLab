@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    button(class="w3-button w3-green", id="button-create-picture", onclick="createParticipantButtonClicked()") Добавить участника
+    br
+    br
+    table(class="w3-table w3-card-12 w3-table-all w3-hoverable", id="participant-table")
+        tr(class="w3-dark-grey")
+            th Фамилия
+            th Имя
+            th Отчество
+            th Запас денежных средств
+            th Действия
+    div(class="w3-modal", id="form-modal")
+        div(class="w3-modal-content modal-form")
+            header(class="w3-container w3-light-grey")
+                span(onclick="document.getElementById('form-modal').style.display='none'", class="w3-button w3-display-topright") &times;
+                h2 Создание/изменение записи об участнике
+            div(id="form-modal-content")

@@ -1,0 +1,39 @@
+{
+  "name": "gerdarina-lab3",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": "babel-node ./bin/www",
+    "watch": "npm-watch"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "del": "^3.0.0",
+    "express": "~4.16.0",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^4.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
+    "http-errors": "~1.6.2",
+    "less-middleware": "^3.0.1",
+    "merge-stream": "^1.0.1",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "watch": "^1.0.2"
+  },
+  "watch": {
+    "start": "{./,routes,views,models}/*.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "gulp": "^4.0.0"
+  }
+}
